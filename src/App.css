@@ -1,0 +1,27 @@
+.app {
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100% - 56px);
+}
+
+.column {
+  width: 30%;
+  background-color: aqua;
+  overflow-y: scroll;
+  border-right: 2px solid black;
+}
+
+.card {
+  height: 5rem;
+  border-top: 1px solid black;
+}
+
+.showcase {
+  background-color: pink;
+  width: 70%;
+}
