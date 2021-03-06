@@ -32,7 +32,7 @@ const initialCats = [
         viewsCount: 0,
     },
     {
-        id: 0,
+        id: 4,
         thumbnailURL: 'https://external-preview.redd.it/GhTDElEXwZBZWX-ahknA1U1xBOuGPUi5ihtRukMoKKc.jpg?auto=webp&s=625163dcbbba3fa52bf71c33a591900c2cedee98',
         name: 'David',
         birthdate: '1947-01-08',
