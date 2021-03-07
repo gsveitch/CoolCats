@@ -3,7 +3,7 @@ const Showcase = ({ currentCat }) => {
 
   const placeholderURL = 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg';
   
-  const dateOptions = { month: 'long', timeZone: 'GMT', day:'numeric', year:'numeric'};
+  const dateOptions = { month: 'long', day:'numeric', year:'numeric'};
   let birthday = new Date(currentCat?.birthdate).toLocaleDateString('en-US', dateOptions);
   
   return (

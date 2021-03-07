@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const EditCatModal = ({ currentCat, setCurrentCat, editCat }) => {
 
   const [newThumbnailURL, setNewThumbnailURL] = useState('');
   const [newName, setNewName] = useState('');
-  const [newBirthdate, setNewBirthdate] = useState('');
+  const [newBirthdate, setNewBirthdate] = useState(new Date());
   const [newOwner, setNewOwner] = useState('');
 
   // listens for changes to current cat to set input fields
   useEffect(() => {
     setNewThumbnailURL(currentCat ? currentCat.thumbnailURL : '');
     setNewName(currentCat ? currentCat.name : '');
-    setNewBirthdate(currentCat ? currentCat.birthdate : '');
+    setNewBirthdate(currentCat ? new Date(currentCat.birthdate) : new Date());
     setNewOwner(currentCat ? currentCat.ownerName : '');
   },[currentCat]);
 
@@ -72,12 +74,12 @@ const EditCatModal = ({ currentCat, setCurrentCat, editCat }) => {
               </div>
               <div className="mb-3">
                 <label htmlFor="birthdate" className="col-form-label">Birth date:</label>
-                <input
-                  type="text"
-                  className="form-control"
+                <DatePicker
                   id="birthdate"
-                  value={newBirthdate}
-                  onChange={(e) => setNewBirthdate(e.target.value)}
+                  className="form-control"
+                  dateFormat='yyyy-MM-dd'
+                  selected={(newBirthdate)}
+                  onChange={date => setNewBirthdate(date)}
                 />
               </div>
               <div className="mb-3">

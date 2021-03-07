@@ -11,7 +11,7 @@ const CatCard = ({ cat, setCurrentCat, editCat, currentCat }) => {
     const placeholderURL = 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg';
     const { name, birthdate, thumbnailURL } = cat;
 
-    const dateOptions = { month: 'long', timeZone: 'GMT', day:'numeric', year:'numeric'};
+    const dateOptions = { month: 'long', day:'numeric', year:'numeric'};
     const birthday = new Date(birthdate).toLocaleDateString('en-US', dateOptions);
 
     return (

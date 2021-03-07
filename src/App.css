@@ -96,3 +96,7 @@
   background-color: #63dbf3;
   border-color: #63dbf3;
 }
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
