@@ -84,13 +84,17 @@ const EditCatModal = ({ currentCat, setCurrentCat, editCat }) => {
               </div>
               <div className="mb-3">
                 <label htmlFor="owner" className="col-form-label">Owner:</label>
-                <input
-                  type="text"
-                  className="form-control"
+                <select
                   id="owner"
+                  className="form-select"
+                  aria-label="Default select example"
                   value={newOwner}
                   onChange={(e) => setNewOwner(e.target.value)}
-                />
+                >
+                  <option value="John Doe">John Doe</option>
+                  <option value="Jane Doe">Jane Doe</option>
+                  <option value="Kate Debarros">Kate Debarros</option>
+                </select>
               </div>
             </form>
           </div>
