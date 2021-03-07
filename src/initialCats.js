@@ -5,7 +5,7 @@ const initialCats = [
         name: 'John',
         birthdate: '1940-10-09',
         ownerName: 'Jane Doe',
-        viewsCount: 0,
+        viewCount: 0,
     },
     {
         id: 1,
@@ -13,7 +13,7 @@ const initialCats = [
         name: 'Paul',
         birthdate: '1942-06-18',
         ownerName: 'Kate Debarros',
-        viewsCount: 0,
+        viewCount: 0,
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const initialCats = [
         name: 'George',
         birthdate: '1943-02-25',
         ownerName: 'John Doe',
-        viewsCount: 0,
+        viewCount: 0,
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const initialCats = [
         name: 'Ringo',
         birthdate: '1940-07-07',
         ownerName: 'Jane Doe',
-        viewsCount: 0,
+        viewCount: 0,
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const initialCats = [
         name: 'David',
         birthdate: '1947-01-08',
         ownerName: 'Kate Debarros',
-        viewsCount: 0,
+        viewCount: 0,
     },
 ];
 

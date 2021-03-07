@@ -23,6 +23,13 @@ function App() {
     localStorage.setItem('catsCollection', JSON.stringify(catsCollection));
   }, [catsCollection]);
 
+  const incrementViewCount = (newCat) => {
+    const catIndex = catsCollection.findIndex((cat) => cat.id === newCat.id);
+    let newCatsCollection = catsCollection;
+    newCatsCollection[catIndex] = newCat;
+    setCatsCollection(newCatsCollection);
+  }
+
   return (
     <div className="app">
       <nav className="navbar navbar-dark bg-dark">
@@ -36,6 +43,8 @@ function App() {
         <Column 
           cats={catsCollection}
           setCurrentCat={setCurrentCat}
+          incrementViewCount={incrementViewCount}
+          currentCat={currentCat}
         />
         <Showcase 
           currentCat={currentCat}
