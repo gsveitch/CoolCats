@@ -4,7 +4,7 @@ const Showcase = ({ currentCat }) => {
   const placeholderURL = 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg';
   
   const dateOptions = { month: 'long', day:'numeric', year:'numeric'};
-  let birthday = new Date(currentCat?.birthdate).toLocaleDateString('en-US', dateOptions);
+  let birthday = new Date(currentCat?.birthdate).toLocaleString('en-US', dateOptions);
   
   return (
     <div className='showcase'>

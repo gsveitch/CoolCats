@@ -12,7 +12,7 @@ const CatCard = ({ cat, setCurrentCat, editCat, currentCat }) => {
     const { name, birthdate, thumbnailURL } = cat;
 
     const dateOptions = { month: 'long', day:'numeric', year:'numeric'};
-    const birthday = new Date(birthdate).toLocaleDateString('en-US', dateOptions);
+    const birthday = new Date(birthdate).toLocaleString('en-US', dateOptions);
 
     return (
         <div
