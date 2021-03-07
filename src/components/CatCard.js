@@ -7,18 +7,18 @@ const CatCard = ({ cat, setCurrentCat, incrementViewCount, currentCat }) => {
         setCurrentCat(newCat);
     }
 
-    const { name, birthdate } = cat;
+    const { name, birthdate, thumbnailURL } = cat;
     const dateOptions = { month: 'long', timeZone: 'CST', day:'numeric', year:'numeric'};
     const birthday = new Date(birthdate).toLocaleDateString('en-US', dateOptions);
 
     return (
         <div
-            className={`card ${currentCat?.id === cat. id ? 'card-selected' : ''}`}
+            className={`cat-card ${currentCat?.id === cat. id ? 'cat-card-selected' : ''}`}
             onClick={currentCat?.id === cat. id ? () => null : onSelect}
         >
-            <img className="img-thumbnail" src={cat.thumbnailURL}/>
-            <div className="card-info">
-                <span className="card-name">{name}</span>
+            <img className="img-thumbnail" src={thumbnailURL}/>
+            <div className="cat-card-info">
+                <span className="cat-card-name">{name}</span>
                 <span>{birthday}</span>
             </div>
         </div>
