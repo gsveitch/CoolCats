@@ -49,6 +49,14 @@
 .cat-card-name {
   font-size: 2rem;
 }
+.search-card {
+  height: 5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Showcase panel */
 .showcase {

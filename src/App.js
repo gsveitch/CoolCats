@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Column from './components/Column';
-import Showcase from './components/Showcase';
 import './App.css';
 import initialCats from './initialCats';
+import Column from './components/Column';
+import Showcase from './components/Showcase';
 import DeleteAlert from './components/DeleteAlert';
 import EditCatModal from './components/EditCatModal';
 

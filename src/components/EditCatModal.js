@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 
 const EditCatModal = ({ currentCat, setCurrentCat, editCat }) => {
 
-  const [newThumbnailURL, setNewThumbnailURL] = useState('null');
-  const [newName, setNewName] = useState('null');
-  const [newBirthdate, setNewBirthdate] = useState('null');
-  const [newOwner, setNewOwner] = useState('null');
+  const [newThumbnailURL, setNewThumbnailURL] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newBirthdate, setNewBirthdate] = useState('');
+  const [newOwner, setNewOwner] = useState('');
 
+  // listens for changes to current cat to set input fields
   useEffect(() => {
     setNewThumbnailURL(currentCat ? currentCat.thumbnailURL : '');
     setNewName(currentCat ? currentCat.name : '');
@@ -15,13 +16,12 @@ const EditCatModal = ({ currentCat, setCurrentCat, editCat }) => {
   },[currentCat]);
 
   const saveChanges = () => {
-    const { thumbnailURL, name, birthdate, ownerName } = currentCat;
     const newCat = {
       ...currentCat,
-      thumbnailURL: newThumbnailURL || thumbnailURL,
-      name: newName || name,
-      birthdate: newBirthdate || birthdate,
-      ownerName: newOwner || ownerName,
+      thumbnailURL: newThumbnailURL,
+      name: newName,
+      birthdate: newBirthdate,
+      ownerName: newOwner,
     }
     editCat(newCat);
     setCurrentCat(newCat);
