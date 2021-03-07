@@ -8,7 +8,9 @@ const CatCard = ({ cat, setCurrentCat, editCat, currentCat }) => {
         setCurrentCat(newCat);
     }
 
+    const placeholderURL = 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg';
     const { name, birthdate, thumbnailURL } = cat;
+
     const dateOptions = { month: 'long', timeZone: 'GMT', day:'numeric', year:'numeric'};
     const birthday = new Date(birthdate).toLocaleDateString('en-US', dateOptions);
 
@@ -17,7 +19,13 @@ const CatCard = ({ cat, setCurrentCat, editCat, currentCat }) => {
             className={`cat-card ${currentCat?.id === cat.id ? 'cat-card-selected' : ''}`}
             onClick={currentCat?.id === cat.id ? () => null : onSelect}
         >
-            <img className="img-thumbnail" src={thumbnailURL} alt="thumbnail"/>
+            <img
+                id={`cat-${cat.id}-thumbnail`}
+                className="img-thumbnail"
+                src={thumbnailURL}
+                alt="thumbnail"
+                onError={() => document.getElementById(`cat-${cat.id}-thumbnail`).src = placeholderURL}
+            />
             <div className="cat-card-info">
                 <span className="cat-card-name">{name}</span>
                 <span>{birthday}</span>

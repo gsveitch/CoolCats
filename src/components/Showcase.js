@@ -1,15 +1,20 @@
 
 const Showcase = ({ currentCat }) => {
 
+  const placeholderURL = 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg';
+  
   const dateOptions = { month: 'long', timeZone: 'GMT', day:'numeric', year:'numeric'};
   let birthday = new Date(currentCat?.birthdate).toLocaleDateString('en-US', dateOptions);
+  
   return (
     <div className='showcase'>
       <div>
         <img
-            className={`showcase-img ${currentCat ? '' : 'placeholder'}`}
-            src={currentCat ? currentCat.thumbnailURL : 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg'}
-            alt="cat"
+          id='cat-showcase-img'
+          className={`showcase-img ${currentCat ? '' : 'placeholder'}`}
+          src={currentCat ? currentCat.thumbnailURL : placeholderURL}
+          alt="cat"
+          onError={() => document.getElementById('cat-showcase-img').src = placeholderURL}
         />
         {currentCat &&
           <div className="showcase-info">
