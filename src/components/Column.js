@@ -1,6 +1,6 @@
 import CatCard from './CatCard';
 
-const Column = ({ cats, setCurrentCat, incrementViewCount, currentCat }) => {
+const Column = ({ cats, setCurrentCat, editCat, currentCat }) => {
     return (
         <div className='column'>
             <span>here is the column</span>
@@ -9,7 +9,7 @@ const Column = ({ cats, setCurrentCat, incrementViewCount, currentCat }) => {
                     key={cat.id}
                     cat={cat}
                     setCurrentCat={setCurrentCat}
-                    incrementViewCount={incrementViewCount}
+                    editCat={editCat}
                     currentCat={currentCat}
                 />
             ))}

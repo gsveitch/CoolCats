@@ -1,6 +1,7 @@
+
 const Showcase = ({ currentCat }) => {
 
-  const dateOptions = { month: 'long', timeZone: 'CST', day:'numeric', year:'numeric'};
+  const dateOptions = { month: 'long', timeZone: 'GMT', day:'numeric', year:'numeric'};
   let birthday = new Date(currentCat?.birthdate).toLocaleDateString('en-US', dateOptions);
   return (
     <div className='showcase'>
@@ -8,6 +9,7 @@ const Showcase = ({ currentCat }) => {
         <img
             className={`showcase-img ${currentCat ? '' : 'placeholder'}`}
             src={currentCat ? currentCat.thumbnailURL : 'https://everycat.org/wp-content/themes/everycat-theme/assets/img/placeholder.jpg'}
+            alt="cat"
         />
         {currentCat &&
           <div className="showcase-info">
@@ -22,13 +24,15 @@ const Showcase = ({ currentCat }) => {
         <div className="showcase-buttons">
           <button
             type="button"
-            class="btn btn-info"
-            onClick={() => console.log('EDIT')}
+            className="btn btn-info"
+            data-bs-toggle="modal"
+            data-bs-target="#editCatModal"
           >Edit</button>
           <button
             type="button"
-            class="btn btn-danger"
-            onClick={() => console.log('DELETE')}
+            className="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteAlert"
           >Delete</button>
         </div>
       }

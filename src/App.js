@@ -3,6 +3,8 @@ import Column from './components/Column';
 import Showcase from './components/Showcase';
 import './App.css';
 import initialCats from './initialCats';
+import DeleteAlert from './components/DeleteAlert';
+import EditCatModal from './components/EditCatModal';
 
 function App() {
   const [catsCollection, setCatsCollection] = useState(JSON.parse(localStorage.getItem('catsCollection')));
@@ -23,10 +25,16 @@ function App() {
     localStorage.setItem('catsCollection', JSON.stringify(catsCollection));
   }, [catsCollection]);
 
-  const incrementViewCount = (newCat) => {
+  const editCat = (newCat) => {
     const catIndex = catsCollection.findIndex((cat) => cat.id === newCat.id);
-    let newCatsCollection = catsCollection;
+    let newCatsCollection = [...catsCollection];
     newCatsCollection[catIndex] = newCat;
+    setCatsCollection(newCatsCollection);
+  }
+
+  const deleteCat = (deletedCat) => {
+    setCurrentCat(null);
+    let newCatsCollection = catsCollection.filter((cat) => cat.id !== deletedCat.id);
     setCatsCollection(newCatsCollection);
   }
 
@@ -43,14 +51,22 @@ function App() {
         <Column 
           cats={catsCollection}
           setCurrentCat={setCurrentCat}
-          incrementViewCount={incrementViewCount}
+          editCat={editCat}
           currentCat={currentCat}
         />
         <Showcase 
           currentCat={currentCat}
         />
       </div>
-      {/* modal */}
+      <EditCatModal 
+        currentCat={currentCat}
+        setCurrentCat={setCurrentCat}
+        editCat={editCat}
+      />
+      <DeleteAlert 
+        currentCat={currentCat}
+        deleteCat={deleteCat}
+      />
     </div>
   );
 }
