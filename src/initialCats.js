@@ -10,7 +10,7 @@ const initialCats = [
     {
         id: 1,
         thumbnailURL: 'https://images.8tracks.com/cover/i/000/134/856/heather-mattoon-cats-in-clothes-3-600x817-9212.jpg?rect=0,108,600,600&q=98&fm=jpg&fit=max',
-        name: 'Paul',
+        name: 'Pawl',
         birthdate: '1942-06-18',
         ownerName: 'Kate Debarros',
         viewCount: 0,
